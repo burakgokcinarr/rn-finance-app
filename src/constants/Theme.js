@@ -7,6 +7,9 @@ const GREEN2_COLOR          = "#6AE09B";
 const BLUE_COLOR            = "#6BC5E8";
 const GRAY_COLOR            = "#999999";
 const STROKE_COLOR          = "#828282";
+const GOLD_COLOR            = "#ffbf00";
+const SILVER_COLOR          = "#999999";
+const PILATIN_COLOR         = "#684589";
 
 export default {
     BG_COLOR,
@@ -17,5 +20,8 @@ export default {
     GREEN2_COLOR,
     BLUE_COLOR,
     GRAY_COLOR,
-    STROKE_COLOR
+    STROKE_COLOR,
+    GOLD_COLOR,
+    SILVER_COLOR,
+    PILATIN_COLOR
 }

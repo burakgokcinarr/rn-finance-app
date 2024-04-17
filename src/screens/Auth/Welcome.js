@@ -1,14 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { Font, Theme } from '../../constants'
 import { Image } from 'expo-image';
+import { Button } from '../../components';
+import { useNavigation } from '@react-navigation/native';
 
 const welcomeImage = require('../../../assets/images/welcome.svg');
 
 export default function Welcome() {
+
+  const navigation = useNavigation();
+
+  const createAccountClicked = () => {
+    navigation.navigate('signup');
+  }
+
+  const loginClicked = () => {
+    navigation.navigate('signin');
+  }
+
   return (
     <View style={styles.container}>
-       <Image
+      <Image
         style={styles.image}
         source={welcomeImage}
         contentFit="contain"
@@ -20,6 +33,12 @@ export default function Welcome() {
       <Text style={styles.subTitle}>
         We are your new financial Advisors to recommed the best investments for you.
       </Text>
+      <Button title="Create Account" onClicked={createAccountClicked}/>
+      <Pressable onPress={loginClicked}>
+        <Text style={styles.login}>
+          Login
+        </Text>
+      </Pressable>
     </View>
   )
 }
@@ -44,10 +63,17 @@ const styles = StyleSheet.create({
         color: Theme.DARK_COLOR
     },
     subTitle: {
+        width: '75%',
         fontSize: 17,
         fontFamily: Font.regular,
         textAlign: 'center',
         color: Theme.DARK_LIGHT_COLOR,
         padding: 1
+    },
+    login: {
+        fontSize: 17,
+        fontFamily: Font.regular,
+        textAlign: 'center',
+        color: Theme.GREEN_COLOR
     }
 })

@@ -45,7 +45,7 @@ export default function TabView() {
         }
       })}
     >
-      <Tab.Screen name="home" component={Home} options={{tabBarLabel: 'Home', headerShown: true}}/>
+      <Tab.Screen name="home" component={Home} options={{tabBarLabel: 'Home', headerShown: true, title: ''}}/>
       <Tab.Screen name="product" component={Product} options={{tabBarLabel: 'Product'}}/>
       <Tab.Screen name="transaction" component={Transaction} options={{tabBarLabel: 'Transaction'}}/>
       <Tab.Screen name="account" component={Account} options={{tabBarLabel: 'Account'}}/>

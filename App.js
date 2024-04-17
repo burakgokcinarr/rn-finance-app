@@ -5,6 +5,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { FontLoader } from './src/config/FontLoader';
 import NavigationRouter from './src/navigation/NavigationRouter';
 import * as SplashScreen from 'expo-splash-screen';
+import { Provider } from 'react-redux'
+import { store } from './src/redux/store';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -39,7 +41,9 @@ export default function App() {
 
   return (
     <View style={{flex: 1}} onLayout={onLayoutRootView}>
-      <NavigationRouter/>
+      <Provider store={store}>
+        <NavigationRouter/>
+      </Provider>
     </View>
   );
 }
