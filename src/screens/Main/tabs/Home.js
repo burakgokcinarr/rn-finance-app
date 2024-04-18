@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome, {auth.displayName}.</Text>
+      <Text style={styles.title}>Welcome, {auth?.displayName}.</Text>
       <View style={styles.card}>
         <Text style={styles.title2}>Your total asset portfolio</Text>
         <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>

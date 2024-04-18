@@ -2,9 +2,14 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { Font, Theme } from '../../constants'
 import { Input, Button } from '../../components'
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../config/firebaseConfig'
+import { useDispatch } from 'react-redux';
+import { setAuth } from '../../redux/authSlice';
 
 export default function SignIn() {
 
+  const dispatch = useDispatch();
   const [createAccount, setCreateAccount] = useState({ fullName: '', email: '', password: '' });
 
   const handleInputChange = (key, value) => {
@@ -15,7 +20,12 @@ export default function SignIn() {
   };
 
   const loginClicked = () => {
-    console.log("login");
+    signInWithEmailAndPassword(auth, createAccount.email, createAccount.password).then((userCredential) => {
+      const user = userCredential.user;
+      dispatch(setAuth({uid: user.uid, displayName: user.displayName}))
+    }).catch((error) => {
+      alert(error)
+    });
   }
 
   return (

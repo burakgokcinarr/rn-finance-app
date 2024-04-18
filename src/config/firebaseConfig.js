@@ -3,12 +3,12 @@ import { initializeAuth, getAuth, getReactNativePersistence } from "firebase/aut
 import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDLqzTiNnTcLcUdUtm5YGBFOHRwS_4Uk5M",
-    authDomain: "rn-expo-finance-app.firebaseapp.com",
-    projectId: "rn-expo-finance-app",
-    storageBucket: "rn-expo-finance-app.appspot.com",
-    messagingSenderId: "1043738037357",
-    appId: "1:1043738037357:web:49f0917f2ef8baa00f4364"
+    apiKey: "xxxxxx",
+    authDomain: "xxxxxx",
+    projectId: "xxxxx",
+    storageBucket: "xxxxx",
+    messagingSenderId: "xxxxxx",
+    appId: "xxxxxxx"
 };
 
 // Initialize Firebase
